@@ -46,10 +46,10 @@ information accordingly -->
 							<!-- For each user in the database, Edit/Delete
 buttons which invokes the edit/delete functions -->
 							<td><a
-								href="edit?name=<c:out value='${user.restaurantname}'
+								href="edit?restaurantname=<c:out value='${user.restaurantname}'
 />">Edit</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; <a
-								href="delete?name=<c:out
+								href="delete?restaurantname=<c:out
 value='${user.restaurantname}' />">Delete</a>
 							</td>
 						</tr>

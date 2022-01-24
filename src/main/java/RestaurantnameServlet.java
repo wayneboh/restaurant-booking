@@ -123,18 +123,18 @@ public class RestaurantnameServlet extends HttpServlet {
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
 		// get parameter passed in the URL
-		String name = request.getParameter("");
+		String restaurantname = request.getParameter("");
 		User existingUser = new User("", "", "");
 		// Step 1: Establishing a Connection
 		try (Connection connection = getConnection();
 				// Step 2:Create a statement using connection object
 				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ID);) {
-			preparedStatement.setString(1, name);
+			preparedStatement.setString(1, restaurantname);
 			// Step 3: Execute the query or update query
 			ResultSet rs = preparedStatement.executeQuery();
 			// Step 4: Process the ResultSet object
 			while (rs.next()) {
-				String restaurantname = rs.getString("restaurantname");
+				restaurantname = rs.getString("restaurantname");
 				String username = rs.getString("username");
 				String comment = rs.getString("comment");
 				existingUser = new User(restaurantname, username, comment);
