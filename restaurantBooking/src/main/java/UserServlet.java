@@ -170,7 +170,7 @@ public class UserServlet extends HttpServlet {
 		  int i = statement.executeUpdate();
 		  }
 		  //Step 3: redirect back to UserServlet (note: remember to change the url to your project name)
-		response.sendRedirect("http://localhost:8090/HelloWorldJavaEE/UserServlet/dashboard");
+		response.sendRedirect("http://localhost:8090/restaurantBooking/UserServlet/dashboard");
 		 }
 		 
 		//method to delete user
@@ -185,7 +185,7 @@ public class UserServlet extends HttpServlet {
 		  int i = statement.executeUpdate();
 		  }
 		  //Step 3: redirect back to UserServlet dashboard (note: remember to change the url to your project name)
-		  response.sendRedirect("http://localhost:8090/HelloWorldJavaEE/UserServlet/dashboard");
+		  response.sendRedirect("http://localhost:8090/restaurantBooking/UserServlet/dashboard");
 		 }
 
 	/**
