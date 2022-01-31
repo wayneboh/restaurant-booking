@@ -113,23 +113,23 @@ public class ManageBookingServlet extends HttpServlet {
 	
 	private void showBookingForm(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
-			String name = request.getParameter("bookingName");
+			String bookingName = request.getParameter("bookingName");
 			Booking existingBooking = new Booking("", "", "", "");
 			
 			try (Connection connection = getConnection();
 			
 			PreparedStatement preparedStatement =
 			connection.prepareStatement(SELECT_BOOKING_BY_ID);) {
-			preparedStatement.setString(1, name);
+			preparedStatement.setString(1, bookingName);
 			
 			ResultSet rs = preparedStatement.executeQuery();
 			
 			while (rs.next()) {
-			name = rs.getString("bookingName");
+			bookingName = rs.getString("bookingName");
 			String restaurantName = rs.getString("restaurantName");
 			String bookingNumber = rs.getString("bookingNumber");
 			String bookingTime = rs.getString("bookingTime");
-			existingBooking = new Booking(restaurantName, name, bookingNumber, bookingTime);
+			existingBooking = new Booking(restaurantName, bookingName, bookingNumber, bookingTime);
 			}
 			} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -155,21 +155,20 @@ public class ManageBookingServlet extends HttpServlet {
 			 statement.setString(4, bookingTime);
 			 int i = statement.executeUpdate();
 			 }
-			 response.sendRedirect("http://localhost:8090/restaurant-booking/ManageBookingServlet/");
+			 response.sendRedirect("http://localhost:8090/restaurant-booking/ManageBookingServlet");
 			}
 	
 	private void deleteBooking(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException {
 			
-			 String name = request.getParameter("restaurantName");
+			 String bookingName = request.getParameter("bookingName");
 			 //Step 2: Attempt connection with database and execute delete user SQL query
-			 try (Connection connection = getConnection(); PreparedStatement statement =
-			connection.prepareStatement(DELETE_BOOKINGS_SQL);) {
-			 statement.setString(1, name);
+			 try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(DELETE_BOOKINGS_SQL);) {
+			 statement.setString(1, bookingName);
 			 int i = statement.executeUpdate();
 			 }
 			 
-			 response.sendRedirect("http://localhost:8090/restaurant-booking/ManageBookingServlet/");
+			 response.sendRedirect("http://localhost:8090/restaurant-booking/ManageBookingServlet");
 			}
 
 }

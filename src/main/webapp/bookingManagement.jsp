@@ -52,9 +52,9 @@ crossorigin="anonymous">
 </td>
 
 <td>
-<a href="ManageBookingServlet/edit?booking=<c:out value='${booking.bookingName}'
+<a href="ManageBookingServlet/edit?bookingName=<c:out value='${booking.bookingName}'
 />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="ManageBookingServlet/delete?booking=<c:out
+<a href="ManageBookingServlet/delete?bookingName=<c:out
 value='${booking.bookingName}' />">Delete</a>
 </td>
 </tr>

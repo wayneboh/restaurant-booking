@@ -43,7 +43,7 @@ Add New Booking
 
 <fieldset class="form-group">
 <label>Booking Name</label> <input type="text" value="<c:out
-value='${listBooking.bookingName}' />" class="form-control" name="bookingName" required="required">
+value='${booking.bookingName}' />" class="form-control" name="bookingName" required="required">
 </fieldset>
 <fieldset class="form-group">
 <label>Restaurant Name</label> <input type="text" value="<c:out
