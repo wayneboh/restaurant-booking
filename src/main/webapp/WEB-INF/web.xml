@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+
+
+  <display-name>restaurant-booking</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+    <servlet>
+    <display-name>BookingServlet</display-name>
+    <servlet-name>BookingServlet</servlet-name>
+    <servlet-class>BookingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookingServlet</servlet-name>
+    <url-pattern>/BookingServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+ <servlet-name>ManageBookingServlet</servlet-name>
+ <servlet-class>ManageBookingServlet</servlet-class>
+ </servlet>
+
+ <servlet-mapping>
+ <servlet-name>ManageBookingServlet</servlet-name>
+<url-pattern>/ManageBookingServlet</url-pattern>
+ <url-pattern>/ManageBookingServlet/edit</url-pattern>
+ <url-pattern>/ManageBookingServlet/update</url-pattern>
+ <url-pattern>/ManageBookingServlet/delete</url-pattern>
+ </servlet-mapping>
+  
+  
+  
+</web-app>
