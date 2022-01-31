@@ -31,7 +31,7 @@
  <servlet-name>ManageBookingServlet</servlet-name>
 <url-pattern>/ManageBookingServlet</url-pattern>
  <url-pattern>/ManageBookingServlet/edit</url-pattern>
- <url-pattern>/ManageBookingServlet/update</url-pattern>
+ <url-pattern>/ManageBookingServlet/updateBooking</url-pattern>
  <url-pattern>/ManageBookingServlet/delete</url-pattern>
  </servlet-mapping>
   

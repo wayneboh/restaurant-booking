@@ -27,7 +27,7 @@ public class ManageBookingServlet extends HttpServlet {
 			  private static final String SELECT_BOOKING_BY_ID = "select restaurantName,bookingName,bookingNumber,bookingTime from restaurantbooking where bookingName =?";
 			  private static final String SELECT_ALL_BOOKING = "select * from restaurantBooking ";
 			  private static final String DELETE_BOOKINGS_SQL = "delete from restaurantbooking where bookingName = ?;";
-			  private static final String UPDATE_BOOKINGS_SQL = "update restaurantbooking set restaurantName = ?,bookingName= ?, bookingNumber =?, where bookingTime = ?;";
+			  private static final String UPDATE_BOOKINGS_SQL = "update restaurantbooking set restaurantName = ?,bookingName= ?, bookingNumber =?,bookingTime =? where restaurantName = ?;";
 			  
 			  
 			  protected Connection getConnection() {
@@ -65,7 +65,7 @@ public class ManageBookingServlet extends HttpServlet {
 			 case "/ManageBookingServlet/edit":
 			 showBookingForm(request, response);
 			 break;
-			 case "/ManageBookingServlet/update":
+			 case "/ManageBookingServlet/updateBooking":
 			 updateBooking(request, response);
 			 break;
 		 default:
@@ -147,12 +147,12 @@ public class ManageBookingServlet extends HttpServlet {
 			 String bookingTime = request.getParameter("bookingTime");
 
 			 //Step 2: Attempt connection with database and execute update user SQL query
-			 try (Connection connection = getConnection(); PreparedStatement statement =
-			connection.prepareStatement(UPDATE_BOOKINGS_SQL);) {
+			 try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_BOOKINGS_SQL);) {
 			 statement.setString(1, restaurantName);
 			 statement.setString(2, bookingName);
 			 statement.setString(3, bookingNumber);
 			 statement.setString(4, bookingTime);
+			 statement.setString(5, restaurantName);
 			 int i = statement.executeUpdate();
 			 }
 			 response.sendRedirect("http://localhost:8090/restaurant-booking/ManageBookingServlet");

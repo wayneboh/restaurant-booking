@@ -24,11 +24,10 @@ class="nav-link">Back to Dashboard</a></li>
 <div class="container col-md-6">
 <div class="card">
 <div class="card-body">
-<c:if test="${listBooking.bookingName != null}">
-<form action="update" method="post">
+<c:if test="${booking.bookingName != null}">
+<form action="updateBooking" method="post">
 </c:if>
 <c:if test="${booking == null}">
-<form action="insert" method="post">
 </c:if>
 <caption>
 <h2>
@@ -45,18 +44,22 @@ Add New Booking
 <label>Booking Name</label> <input type="text" value="<c:out
 value='${booking.bookingName}' />" class="form-control" name="bookingName" required="required">
 </fieldset>
+
 <fieldset class="form-group">
-<label>Restaurant Name</label> <input type="text" value="<c:out
+<label>Restaurant Name (Cannot be changed)</label> <input type="text" disabled = "disabled" value="<c:out
 value='${booking.restaurantName}' />" class="form-control" name="restaurantName">
 </fieldset>
+
 <fieldset class="form-group">
 <label>Booking Number</label> <input type="text" value="<c:out
 value='${booking.bookingNumber}' />" class="form-control" name="bookingNumber">
 </fieldset>
+
 <fieldset class="form-group">
 <label> Time Slot</label> <input type="text" value="<c:out
 value='${booking.bookingTime}' />" class="form-control" name="bookingTime">
 </fieldset>
+
 <button type="submit" class="btn btn-success">Save</button>
 </form>
 </div>
