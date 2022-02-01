@@ -1,4 +1,3 @@
-
 public class User {
 	public User(String restaurantname, String username, String comment) {
 		super();
@@ -34,4 +33,7 @@ public class User {
 	protected String restaurantname;
 	protected String username;
 	protected String comment;
+	
+	
+	
 }

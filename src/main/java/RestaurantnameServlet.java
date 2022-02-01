@@ -33,7 +33,7 @@ public class RestaurantnameServlet extends HttpServlet {
 	// database
 	private static final String INSERT_USERS_SQL = "INSERT INTO ReviewDetails"
 			+ " (restaurantName,userName, comment) VALUES " + " (?, ?, ?);";
-	private static final String SELECT_USER_BY_ID = "select restaurantName,userName, comment from ReviewDetails where restaurantname =?";
+	private static final String SELECT_USER_BY_ID = "select restaurantName,userName, comment from ReviewDetails where restaurantName =?";
 	private static final String SELECT_ALL_USERS = "select * from ReviewDetails ";
 	private static final String DELETE_USERS_SQL = "delete from ReviewDetails where restaurantName = ?;";
 	private static final String UPDATE_USERS_SQL = "update ReviewDetails set restaurantName = ?,userName= ?,comment =? where restaurantName = ?;";
@@ -118,56 +118,57 @@ public class RestaurantnameServlet extends HttpServlet {
 		request.getRequestDispatcher("/commentManagement.jsp").forward(request, response);
 	}
 
-	// method to get parameter, query database for existing user data and redirect
-	// to user edit page
-	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
-			throws SQLException, ServletException, IOException {
-		// get parameter passed in the URL
-		String restaurantname = request.getParameter("");
-		User existingUser = new User("", "", "");
-		// Step 1: Establishing a Connection
-		try (Connection connection = getConnection();
-				// Step 2:Create a statement using connection object
-				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ID);) {
-			preparedStatement.setString(1, restaurantname);
-			// Step 3: Execute the query or update query
-			ResultSet rs = preparedStatement.executeQuery();
-			// Step 4: Process the ResultSet object
-			while (rs.next()) {
-				restaurantname = rs.getString("restaurantname");
-				String username = rs.getString("username");
-				String comment = rs.getString("comment");
-				existingUser = new User(restaurantname, username, comment);
-			}
-		} catch (SQLException e) {
-			System.out.println(e.getMessage());
-		}
-		// Step 5: Set existingUser to request and serve up the userEdit form
-		request.setAttribute("user", existingUser);
-		request.getRequestDispatcher("/CommentEdit.jsp").forward(request, response);
-	}
+	//method to get parameter, query database for existing user data and redirect to user edit page
+	 private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+	 throws SQLException, ServletException, IOException {
+	 //get parameter passed in the URL
+	 String restaurantname = request.getParameter("restaurantname");
+	 User existingUser = new User("", "", "");
+	 // Step 1: Establishing a Connection
+	 try (Connection connection = getConnection();
+	 // Step 2:Create a statement using connection object
+	 PreparedStatement preparedStatement =
+	 connection.prepareStatement(SELECT_USER_BY_ID);) {
+	 preparedStatement.setString(1, restaurantname);
+	 // Step 3: Execute the query or update query
+	 ResultSet rs = preparedStatement.executeQuery();
+	 // Step 4: Process the ResultSet object
+	 while (rs.next()) {
+		restaurantname = rs.getString("restaurantname");
+	 String username = rs.getString("username");
+	 String comment = rs.getString("comment");
+	 existingUser = new User(restaurantname, username, comment);
+	 }
+	 } catch (SQLException e) {
+	 System.out.println(e.getMessage());
+	 }
+	 //Step 5: Set existingUser to request and serve up the userEdit form
+	 request.setAttribute("user", existingUser);
+	 request.getRequestDispatcher("/CommentEdit.jsp").forward(request, response);
+	 }
+	 
+	//method to update the user table base on the form data
+	 private void updateUser(HttpServletRequest request, HttpServletResponse response)
+	 throws SQLException, IOException {
+	 //Step 1: Retrieve value from the request
+	 String oriName = request.getParameter("oriName");
+	  String restaurantname = request.getParameter("restaurantname");
+	  String username = request.getParameter("username");
+	  String comment = request.getParameter("comment");
 
-	// method to update the user table base on the form data
-	private void updateUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
-		// Step 1: Retrieve value from the request
-		String oriName = request.getParameter("oriName");
-		String restaurantname = request.getParameter("restaurantname");
-		String username = request.getParameter("username");
-		String comment = request.getParameter("comment");
 
-		// Step 2: Attempt connection with database and execute update user SQL query
-		try (Connection connection = getConnection();
-				PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);) {
-			statement.setString(1, restaurantname);
-			statement.setString(2, username);
-			statement.setString(3, comment);
-			statement.setString(4, oriName);
-			int i = statement.executeUpdate();
-		}
-		// Step 3: redirect back to UserServlet (note: remember to change the url to
-		// your project name)
-		response.sendRedirect("http://localhost:8090/restaurant-booking/RestaurantnameServlet/dashboard");
-	}
+	  //Step 2: Attempt connection with database and execute update user SQL query
+	  try (Connection connection = getConnection(); PreparedStatement statement =
+	 connection.prepareStatement(UPDATE_USERS_SQL);) {
+	  statement.setString(1, restaurantname);
+	  statement.setString(2, username);
+	  statement.setString(3, comment);
+	  statement.setString(4, oriName);
+	  int i = statement.executeUpdate();
+	  }
+	  //Step 3: redirect back to UserServlet (note: remember to change the url to your project name)
+	response.sendRedirect("http://localhost:8090/restaurant-booking/RestaurantnameServlet/dashboard");
+	 }
 
 	// method to delete user
 	private void deleteUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
