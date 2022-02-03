@@ -88,7 +88,7 @@ public class RestaurantServlet extends HttpServlet {
 		}
 		
 	}
-	// Step 5: listUsers function to connect to the database and retrieve all users
+	// Step 5: listRestaurants function to connect to the database and retrieve all restaurants
 	// records
 	private void listRestaurants(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
@@ -109,14 +109,14 @@ public class RestaurantServlet extends HttpServlet {
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		// Step 5.4: Set the users list into the listUsers attribute to be pass to
-				// the userManagement.jsp
+		// Step 5.4: Set the restaurants list into the listRestaurants attribute to be pass to
+				// the restaurantManagement.jsp
 				request.setAttribute("listRestaurants", restaurants);
 				request.getRequestDispatcher("/restaurantManagement.jsp").forward(request, response);
 	}
 	
-	// method to get parameter, query database for existing user data and redirect
-	// to user edit page
+	// method to get parameter, query database for existing restaurant data and redirect
+	// to restaurant edit page
 	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, ServletException, IOException {
 		// get parameter passed in the URL
@@ -140,11 +140,11 @@ public class RestaurantServlet extends HttpServlet {
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
-		// Step 5: Set existingUser to request and serve up the userEdit form
+		// Step 5: Set existingRestaurant to request and serve up the restaurantEdit form
 		request.setAttribute("restaurant", existingRestaurant);
 		request.getRequestDispatcher("/RestaurantEdit.jsp").forward(request, response);
 	}
-	// method to update the user table base on the form data
+	// method to update the restaurant table base on the form data
 	private void updateRestaurant(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		// Step 1: Retrieve value from the request
 		String oriName = request.getParameter("oriName");
@@ -153,7 +153,7 @@ public class RestaurantServlet extends HttpServlet {
 		String address = request.getParameter("address");
 		String info = request.getParameter("info");
 
-		// Step 2: Attempt connection with database and execute update user SQL query
+		// Step 2: Attempt connection with database and execute update restaurant SQL query
 		try (Connection connection = getConnection();
 				PreparedStatement statement = connection.prepareStatement(UPDATE_RESTAURANTS_SQL);) {
 			statement.setString(1, name);
@@ -163,24 +163,24 @@ public class RestaurantServlet extends HttpServlet {
 			statement.setString(5, oriName);
 			int i = statement.executeUpdate();
 		}
-		// Step 3: redirect back to UserServlet (note: remember to change the url to
+		// Step 3: redirect back to RestaurantServlet (note: remember to change the url to
 		// your project name)
-		response.sendRedirect("http://localhost:8080/restaurant-booking/RestaurantServlet/dashboard");
+		response.sendRedirect("http://localhost:8090/restaurant-booking/RestaurantServlet/dashboard");
 	}
 	
-	// method to delete user
+	// method to delete restaurant
 	private void deleteRestaurant(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		// Step 1: Retrieve value from the request
 		String name = request.getParameter("name");
-		// Step 2: Attempt connection with database and execute delete user SQL query
+		// Step 2: Attempt connection with database and execute delete restaurant SQL query
 		try (Connection connection = getConnection();
 				PreparedStatement statement = connection.prepareStatement(DELETE_RESTAURANTS_SQL);) {
 			statement.setString(1, name);
 			int i = statement.executeUpdate();
 		}
-		// Step 3: redirect back to UserServlet dashboard (note: remember to change the
+		// Step 3: redirect back to RestauratServlet dashboard (note: remember to change the
 		// url to your project name)
-		response.sendRedirect("http://localhost:8080/restaurant-booking/RestaurantServlet/dashboard");
+		response.sendRedirect("http://localhost:8090/restaurant-booking/RestaurantServlet/dashboard");
 	}
 
 
