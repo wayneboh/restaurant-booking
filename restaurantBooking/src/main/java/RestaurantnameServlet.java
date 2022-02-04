@@ -95,7 +95,7 @@ public class RestaurantnameServlet extends HttpServlet {
 	// records
 	private void listUsers(HttpServletRequest request, HttpServletResponse response)
 			throws SQLException, IOException, ServletException {
-		List<User> users = new ArrayList<>();
+		List<UserComments> users = new ArrayList<>();
 		try (Connection connection = getConnection();
 				// Step 5.1: Create a statement using connection object
 				PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS);) {
@@ -106,7 +106,7 @@ public class RestaurantnameServlet extends HttpServlet {
 				String restaurantname = rs.getString("restaurantname");
 				String username = rs.getString("username");
 				String comment = rs.getString("comment");
-				users.add(new User(restaurantname, username, comment));
+				users.add(new UserComments(restaurantname, username, comment));
 			}
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -123,7 +123,7 @@ public class RestaurantnameServlet extends HttpServlet {
 	 throws SQLException, ServletException, IOException {
 	 //get parameter passed in the URL
 	 String restaurantname = request.getParameter("restaurantname");
-	 User existingUser = new User("", "", "");
+	 UserComments existingUser = new UserComments("", "", "");
 	 // Step 1: Establishing a Connection
 	 try (Connection connection = getConnection();
 	 // Step 2:Create a statement using connection object
@@ -137,7 +137,7 @@ public class RestaurantnameServlet extends HttpServlet {
 		restaurantname = rs.getString("restaurantname");
 	 String username = rs.getString("username");
 	 String comment = rs.getString("comment");
-	 existingUser = new User(restaurantname, username, comment);
+	 existingUser = new UserComments(restaurantname, username, comment);
 	 }
 	 } catch (SQLException e) {
 	 System.out.println(e.getMessage());
