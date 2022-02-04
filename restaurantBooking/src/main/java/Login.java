@@ -15,9 +15,23 @@ public class Login extends HttpServlet {
         
         if(Validate.checkUser(email, password))
         {
+            try{  
+          	  
+                response.setContentType("text/html");  
+                PrintWriter value = response.getWriter();  
+         
+                String n=request.getParameter("email");  
+                value.print("Welcome "+n);  
+              
+                Cookie ck=new Cookie("email",n);//creating cookie object  
+                response.addCookie(ck);//adding cookie in the response  
+              
+                value.close();}
+            catch(Exception e){System.out.println(e);}  
             RequestDispatcher rs = request.getRequestDispatcher("Welcome");
             rs.forward(request, response);
-        }
+              }
+             
         else
         {
            out.println("Username or Password incorrect");
