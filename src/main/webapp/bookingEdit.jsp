@@ -46,7 +46,7 @@ value='${booking.bookingName}' />" class="form-control" name="bookingName" requi
 </fieldset>
 
 <fieldset class="form-group">
-<label>Restaurant Name (Cannot be changed)</label> <input type="text" disabled = "disabled" value="<c:out
+<label>Restaurant Name (Cannot be changed)</label> <input type="text" readonly value="<c:out
 value='${booking.restaurantName}' />" class="form-control" name="restaurantName">
 </fieldset>
 
@@ -56,9 +56,20 @@ value='${booking.bookingNumber}' />" class="form-control" name="bookingNumber">
 </fieldset>
 
 <fieldset class="form-group">
-<label> Time Slot</label> <input type="text" value="<c:out
-value='${booking.bookingTime}' />" class="form-control" name="bookingTime">
-</fieldset>
+    <label >Time Slot</label>
+    <select name="bookingTime" class="form-control">
+    <option value ="1pm"     <c:if test="${booking.bookingTime == '1pm'}">selected</c:if>>1pm</option>
+    <option value="2pm" <c:if test="${booking.bookingTime == '2pm'}">selected</c:if>>2pm</option>
+    <option value="3pm" <c:if test="${booking.bookingTime == '3pm'}">selected</c:if>>3pm</option>
+    <option value="4pm" <c:if test="${booking.bookingTime == '4pm'}">selected</c:if>>4pm</option>
+    <option value="5pm" <c:if test="${booking.bookingTime == '5pm'}">selected</c:if>>5pm</option>
+    <option value="6pm" <c:if test="${booking.bookingTime == '6pm'}">selected</c:if>>6pm</option>
+    <option value="7pm" <c:if test="${booking.bookingTime == '7pm'}">selected</c:if>>7pm</option>
+    <option value="8pm" <c:if test="${booking.bookingTime == '8pm'}">selected</c:if>>8pm</option>
+    <option value="9pm" <c:if test="${booking.bookingTime == '9pm'}">selected</c:if>>9pm</option>
+
+    </select>
+    </fieldset>
 
 <button type="submit" class="btn btn-success">Save</button>
 </form>
