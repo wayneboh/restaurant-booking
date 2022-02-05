@@ -39,3 +39,4 @@ public class Restaurant {
 	 protected String info;
 
 }
+
