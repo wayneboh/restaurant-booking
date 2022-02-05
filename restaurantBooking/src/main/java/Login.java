@@ -25,11 +25,15 @@ public class Login extends HttpServlet {
               
                 Cookie ck=new Cookie("email",n);//creating cookie object  
                 response.addCookie(ck);//adding cookie in the response  
-              
+            	response.sendRedirect("http://localhost:8090/restaurantBooking/UserServlet/dashboard");
                 value.close();}
-            catch(Exception e){System.out.println(e);}  
-            RequestDispatcher rs = request.getRequestDispatcher("Welcome");
-            rs.forward(request, response);
+            catch(Exception e){
+            	System.out.println(e);
+            	}  
+            //RequestDispatcher rs = request.getRequestDispatcher("Welcome");
+            //rs.forward(request, response);
+            
+        
               }
         else
         {
