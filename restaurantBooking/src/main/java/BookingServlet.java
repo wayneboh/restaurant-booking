@@ -61,10 +61,11 @@ public class BookingServlet extends HttpServlet {
 			 int i = ps.executeUpdate();
 			 
 			if (i > 0){
-			PrintWriter writer = response.getWriter();
-			writer.println("<h1>" + "You have successfully reserved a slot!" +
-			"</h1>");
-			writer.close();
+			response.sendRedirect("http://localhost:8090/restaurantBooking/ManageBookingServlet");
+			//PrintWriter writer = response.getWriter();
+			//writer.println("<h1>" + "You have successfully reserved a slot!" +
+			//"</h1>");
+			//writer.close();
 			}
 			}
 		

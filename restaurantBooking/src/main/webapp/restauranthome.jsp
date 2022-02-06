@@ -9,8 +9,8 @@
 <body>
 
 <h1>Welcome to restaurant management, please select a link below to continue.</h1>
-<h2><a href="http://localhost:8090/restaurant-booking/restaurantcreate.jsp"> Add a restaurant to database. </a></h2>
-<h2><a href="http://localhost:8090/restaurant-booking/RestaurantServlet/dashboard"> Manage all restaurants. </a></h2>
+<h2><a href="http://localhost:8090/restaurantBooking/restaurantcreate.jsp"> Add a restaurant to database. </a></h2>
+<h2><a href="http://localhost:8090/restaurantBooking/RestaurantServlet/dashboard"> Manage all restaurants. </a></h2>
 
 </body>
 </html>

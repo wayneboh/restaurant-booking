@@ -20,6 +20,8 @@
 				<!-- Add new user button redirects to the register.jsp page -->
 				<a href="<%=request.getContextPath()%>/comment.jsp"
 					class="btn btnsuccess">Add New comment</a>
+					<a href='http://localhost:8090/restaurantBooking/RestaurantServlet/dashboard'
+					class='btn btn-primary px-5 py-3'><b>View Restaurants</b></a>
 			</div>
 			<br>
 			<!-- Create a table to list out all current users information -->

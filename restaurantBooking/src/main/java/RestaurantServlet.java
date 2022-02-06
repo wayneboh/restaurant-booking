@@ -165,7 +165,7 @@ public class RestaurantServlet extends HttpServlet {
 		}
 		// Step 3: redirect back to RestaurantServlet (note: remember to change the url to
 		// your project name)
-		response.sendRedirect("http://localhost:8090/restaurant-booking/RestaurantServlet/dashboard");
+		response.sendRedirect("http://localhost:8090/restaurantBooking/RestaurantServlet/dashboard");
 	}
 	
 	// method to delete restaurant
@@ -180,7 +180,7 @@ public class RestaurantServlet extends HttpServlet {
 		}
 		// Step 3: redirect back to RestauratServlet dashboard (note: remember to change the
 		// url to your project name)
-		response.sendRedirect("http://localhost:8090/restaurant-booking/RestaurantServlet/dashboard");
+		response.sendRedirect("http://localhost:8090/restaurantBooking/RestaurantServlet/dashboard");
 	}
 
 

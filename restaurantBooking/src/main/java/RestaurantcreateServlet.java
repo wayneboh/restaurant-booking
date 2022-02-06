@@ -62,9 +62,9 @@ public class RestaurantcreateServlet extends HttpServlet {
 				 PrintWriter writer = response.getWriter();
 				 writer.println("<h1>" + "You have successfully added a restaurant!" +
 				 "</h1>");
-				 writer.println("<h2>"+"<a href=\"http://localhost:8090/restaurant-booking/RestaurantServlet/dashboard\"> Click here to go to restaurant management dashboard </a>"+"</h2>");
-				 writer.println("<h2>"+"<a href=\"http://localhost:8090/restaurant-booking/restaurantcreate.jsp\"> Click here to add another restaurant </a>"+"</h2>");
-				 writer.println("<h2>"+"<a href=\"http://localhost:8090/restaurant-booking/restauranthome.jsp\"> Click here to return to landing page </a>"+"</h2>");
+				 writer.println("<h2>"+"<a href=\"http://localhost:8090/restaurantBooking/RestaurantServlet/dashboard\"> Click here to go to restaurant management dashboard </a>"+"</h2>");
+				 writer.println("<h2>"+"<a href=\"http://localhost:8090/restaurantBooking/restaurantcreate.jsp\"> Click here to add another restaurant </a>"+"</h2>");
+				 writer.println("<h2>"+"<a href=\"http://localhost:8090/restaurantBooking/restauranthome.jsp\"> Click here to return to landing page </a>"+"</h2>");
 				 writer.close();
 				 }
 				 }

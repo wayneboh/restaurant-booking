@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,14 +12,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div class="row">
+	<div class="row">
 		<div class="container">
 			<h3 class="text-center">List of Restaurants</h3>
 			<hr>
 			<div class="container text-left">
 				<!-- Add new restaurant button redirects to the register.jsp page -->
 				<a href="<%=request.getContextPath()%>/restaurantcreate.jsp"
-					class="btn btnsuccess">Add New Restaurant</a>
+					class="btn btnsuccess">Add New Restaurant</a> 
+				<a href='http://localhost:8090/restaurantBooking/UserServlet/dashboard'
+					class='btn btn-primary px-5 py-3'><b>View Users</b></a>
+				<a href='http://localhost:8090/restaurantBooking/RestaurantnameServlet/dashboard'
+					class='btn btn-primary px-5 py-3'><b>View Comments</b></a>
+				<a href='http://localhost:8090/restaurantBooking/ManageBookingServlet'
+					class='btn btn-primary px-5 py-3'><b>View Bookings</b></a>
+					
 			</div>
 			<br>
 			<!-- Create a table to list out all current restaurants information -->

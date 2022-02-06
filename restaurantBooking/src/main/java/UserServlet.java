@@ -201,13 +201,14 @@ public class UserServlet extends HttpServlet {
 	private void logoutUser(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException {
 		
 		//do logout
-	
-		//redirect to login page or home page
-		response.sendRedirect("http://localhost:8090/restaurantBooking/userLogin.jsp");
 		//remove cookies
 		Cookie ck=new Cookie("email","");//deleting value of cookie  
 		ck.setMaxAge(0);//changing the maximum age to 0 seconds  
 		response.addCookie(ck);//adding cookie in the response  
+	
+		//redirect to login page or home page
+		response.sendRedirect("http://localhost:8090/restaurantBooking/userLogin.jsp");
+
 	}
 	
 	

@@ -19,5 +19,6 @@
 		<option>user</option></select>
 	<input type="submit" value="Call Servlet" />
 </form>
+<a href='http://localhost:8090/restaurantBooking/index.jsp' class='btn btn-primary px-5 py-3'><b>Home Page</b></a>
 </body>
 </html>

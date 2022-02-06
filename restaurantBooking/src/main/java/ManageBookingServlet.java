@@ -155,7 +155,7 @@ public class ManageBookingServlet extends HttpServlet {
 			 statement.setString(5, restaurantName);
 			 int i = statement.executeUpdate();
 			 }
-			 response.sendRedirect("http://localhost:8090/restaurant-booking/ManageBookingServlet");
+			 response.sendRedirect("http://localhost:8090/restaurantBooking/ManageBookingServlet");
 			}
 	
 	private void deleteBooking(HttpServletRequest request, HttpServletResponse response)
@@ -168,7 +168,7 @@ public class ManageBookingServlet extends HttpServlet {
 			 int i = statement.executeUpdate();
 			 }
 			 
-			 response.sendRedirect("http://localhost:8090/restaurant-booking/ManageBookingServlet");
+			 response.sendRedirect("http://localhost:8090/restaurantBooking/ManageBookingServlet");
 			}
 
 }

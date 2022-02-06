@@ -76,9 +76,11 @@ public class CommentServlet extends HttpServlet {
 			// Step 7: check if the query had been successfully execute, return “You are
 			// successfully registered” via the response,
 			if (i > 0) {
-				PrintWriter writer = response.getWriter();
-				writer.println("<h1>" + "You have successfully Comment!" + "</h1>");
-				writer.close();
+				response.sendRedirect("http://localhost:8090/restaurantBooking/RestaurantnameServlet/dashboard");
+				//PrintWriter writer = response.getWriter();
+				//writer.println("<h1>" + "You have successfully Comment!" + "</h1>");
+				//writer.close();
+				
 			}
 		}
 

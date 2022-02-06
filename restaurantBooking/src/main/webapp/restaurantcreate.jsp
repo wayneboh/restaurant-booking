@@ -16,7 +16,7 @@
 	Information:<input type="text" name="info">
 <input type="submit" value="Call Servlet"/>
 </form>
-<h2><a href="http://localhost:8090/restaurant-booking/restauranthome.jsp"> Click here to return to landing page </a></h2>
+<h2><a href="http://localhost:8090/restaurantBooking/restauranthome.jsp"> Click here to return to landing page </a></h2>
 
 
 </body>
