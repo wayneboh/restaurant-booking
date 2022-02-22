@@ -61,7 +61,7 @@ public class BookingServlet extends HttpServlet {
 			 int i = ps.executeUpdate();
 			 
 			if (i > 0){
-			response.sendRedirect(request.getContextPath()+"/restaurantBooking/ManageBookingServlet");
+			response.sendRedirect(request.getContextPath()+"/ManageBookingServlet");
 			//PrintWriter writer = response.getWriter();
 			//writer.println("<h1>" + "You have successfully reserved a slot!" +
 			//"</h1>");
