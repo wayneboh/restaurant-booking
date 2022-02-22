@@ -19,7 +19,7 @@ public class NewTest {
 	  driver.get("http://localhost:8080/restaurantBooking/ManageBookingServlet");
 	  
 	  //Create a test booking 
-	  driver.findElement(By.linkText("Book another slot")).click();
+	  driver.findElement(By.cssSelector("body > div.row > div > div > a.btn.btnsuccess")).click();
 	  driver.findElement(By.name("restaurantName")).sendKeys("Test Restaurant");
 	  driver.findElement(By.name("bookingName")).sendKeys("Test Name");
 	  driver.findElement(By.name("bookingNumber")).sendKeys("91234567");
