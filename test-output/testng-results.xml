@@ -2,20 +2,20 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-02-22T09:42:32Z" name="Default suite" finished-at="2022-02-22T09:42:34Z" duration-ms="2485">
+  <suite started-at="2022-02-22T09:54:39Z" name="Default suite" finished-at="2022-02-22T09:54:42Z" duration-ms="2716">
     <groups>
     </groups>
-    <test started-at="2022-02-22T09:42:32Z" name="Default test" finished-at="2022-02-22T09:42:34Z" duration-ms="2485">
+    <test started-at="2022-02-22T09:54:39Z" name="Default test" finished-at="2022-02-22T09:54:42Z" duration-ms="2716">
       <class name="restaurantBooking.NewTest">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:restaurantBooking.NewTest@64c63c79]" started-at="2022-02-22T17:42:32Z" name="beforeTest" finished-at="2022-02-22T17:42:32Z" duration-ms="7" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:restaurantBooking.NewTest@64c63c79]" started-at="2022-02-22T17:54:40Z" name="beforeTest" finished-at="2022-02-22T17:54:40Z" duration-ms="7" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="f()[pri:0, instance:restaurantBooking.NewTest@64c63c79]" started-at="2022-02-22T17:42:32Z" name="f" finished-at="2022-02-22T17:42:34Z" duration-ms="2469" status="PASS">
+        <test-method signature="f()[pri:0, instance:restaurantBooking.NewTest@64c63c79]" started-at="2022-02-22T17:54:40Z" name="f" finished-at="2022-02-22T17:54:42Z" duration-ms="2691" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:restaurantBooking.NewTest@64c63c79]" started-at="2022-02-22T17:42:34Z" name="afterTest" finished-at="2022-02-22T17:42:34Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:restaurantBooking.NewTest@64c63c79]" started-at="2022-02-22T17:54:42Z" name="afterTest" finished-at="2022-02-22T17:54:42Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
