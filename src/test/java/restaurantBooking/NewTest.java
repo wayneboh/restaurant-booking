@@ -16,7 +16,7 @@ public class NewTest {
 	  WebDriver driver = new ChromeDriver();
 	  
 	  //Navigate to the manage booking view 
-	  driver.get("http://localhost:8090/restaurantBooking/ManageBookingServlet");
+	  driver.get("http://localhost:8080/restaurant-booking/ManageBookingServlet");
 	  
 	  //Create a test booking 
 	  driver.findElement(By.linkText("Book another slot")).click();
