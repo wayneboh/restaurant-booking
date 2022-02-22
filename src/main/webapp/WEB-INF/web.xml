@@ -72,6 +72,7 @@
 		<url-pattern>/UserServlet/edit</url-pattern>
 		<url-pattern>/UserServlet/update</url-pattern>
 		<url-pattern>/UserServlet/delete</url-pattern>
+		<url-pattern>/UserServlet/logout</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>login</servlet-name>
@@ -111,7 +112,7 @@
 		<url-pattern>/RestaurantServlet/delete</url-pattern>
 	</servlet-mapping>
 
-	<!-- Restaurant Mapping -->
+	<!-- Booking Mapping -->
 	<servlet-mapping>
 		<servlet-name>BookingServlet</servlet-name>
 		<url-pattern>/BookingServlet</url-pattern>
@@ -123,7 +124,6 @@
 		<url-pattern>/ManageBookingServlet/updateBooking</url-pattern>
 		<url-pattern>/ManageBookingServlet/delete</url-pattern>
 	</servlet-mapping>
-
 
 
 </web-app>
